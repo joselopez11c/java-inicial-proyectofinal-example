@@ -8,10 +8,5 @@ import java.util.List;
 
 public interface ComprobanteService {
 
-    ComprobanteResponse buscarPorId(Long id);
-    List<ComprobanteResponse> buscarTodos();
-    ComprobanteResponse crear(ComprobanteRequest comprobante) throws ApiException;
-    ComprobanteResponse actualizar(ComprobanteRequest comprobante) throws ApiException;
-    void eliminar(ComprobanteRequest comprobante) throws ApiException;
-    void eliminarPorId(Long id);
+    ComprobanteResponse crear(ComprobanteRequest request) throws ApiException;
 }
