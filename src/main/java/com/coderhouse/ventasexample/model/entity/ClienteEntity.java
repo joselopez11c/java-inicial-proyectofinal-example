@@ -26,5 +26,4 @@ public class ClienteEntity {
     @Column(name = "APELLIDO")
     private String apellido;
 
-
 }

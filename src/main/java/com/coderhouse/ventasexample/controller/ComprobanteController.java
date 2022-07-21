@@ -1,5 +1,6 @@
 package com.coderhouse.ventasexample.controller;
 
+import com.coderhouse.ventasexample.handle.ApiException;
 import com.coderhouse.ventasexample.model.request.ComprobanteRequest;
 import com.coderhouse.ventasexample.model.response.ComprobanteResponse;
 import com.coderhouse.ventasexample.service.ComprobanteService;
@@ -18,7 +19,7 @@ public class ComprobanteController {
     private final ComprobanteService service;
 
     @PostMapping()
-    public ResponseEntity<ComprobanteResponse> crearComprobante(@RequestBody ComprobanteRequest request) {
+    public ResponseEntity<ComprobanteResponse> crearComprobante(@RequestBody ComprobanteRequest request) throws ApiException {
         return ResponseEntity.ok(service.crear(request));
     }
 

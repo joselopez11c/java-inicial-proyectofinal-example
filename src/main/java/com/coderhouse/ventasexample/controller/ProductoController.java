@@ -44,7 +44,7 @@ public class ProductoController {
         service.eliminar(producto);
     }
 
-    @PostMapping("/eliminar/{dni}")
+    @PostMapping("/eliminar/{id}")
     public void eliminarPorId(@PathVariable Long id) {
         service.eliminarPorId(id);
     }
