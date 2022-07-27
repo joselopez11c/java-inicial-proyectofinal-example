@@ -7,6 +7,7 @@ import com.coderhouse.ventasexample.model.response.ClienteResponse;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,7 +23,9 @@ public class ClienteBuilder {
     }
 
     public static List<ClienteResponse> entityToResponseList(List<ClienteEntity> entityList) {
-        return entityList.stream().map(ClienteBuilder::entityToResponse).collect(Collectors.toList());
+        return entityList.stream()
+                .map(ClienteBuilder::entityToResponse)
+                .collect(Collectors.toList());
     }
 
     public static ClienteEntity requestToEntity(ClienteRequest cliente) {

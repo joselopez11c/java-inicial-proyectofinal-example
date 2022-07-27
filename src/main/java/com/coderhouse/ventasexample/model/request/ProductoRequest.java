@@ -15,7 +15,7 @@ public class ProductoRequest {
 
     private Integer codigo;
     private String descripcion;
-    private Integer stock;
+    private Integer cantidad;
     private BigDecimal precio;
 
 }

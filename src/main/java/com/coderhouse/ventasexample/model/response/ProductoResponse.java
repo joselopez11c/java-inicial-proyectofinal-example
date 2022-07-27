@@ -16,6 +16,6 @@ public class ProductoResponse {
     private Integer productoId;
     private Integer codigo;
     private String descripcion;
-    private Integer stock;
+    private Integer cantidad;
     private BigDecimal precio;
 }

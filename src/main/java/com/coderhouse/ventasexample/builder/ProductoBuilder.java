@@ -14,7 +14,7 @@ public class ProductoBuilder {
                 .productoId(producto.getProductoId().intValue())
                 .codigo(producto.getCodigo())
                 .precio(producto.getPrecio())
-                .stock(producto.getStock())
+                .cantidad(producto.getStock())
                 .descripcion(producto.getDescripcion())
                 .build();
     }
@@ -27,7 +27,7 @@ public class ProductoBuilder {
         return ProductoEntity.builder()
                 .codigo(producto.getCodigo())
                 .precio(producto.getPrecio())
-                .stock(producto.getStock())
+                .stock(producto.getCantidad())
                 .descripcion(producto.getDescripcion())
                 .build();
     }

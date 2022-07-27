@@ -26,9 +26,9 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public ProductoResponse buscarPorCodigo(Integer codigo) {
-        ProductoEntity producto = productoRepository.findByCodigo(codigo);
-        if (producto != null) {
-            return ProductoBuilder.entityToResponse(producto);
+        var producto = productoRepository.findByCodigo(codigo);
+        if (producto.isPresent()) {
+            return ProductoBuilder.entityToResponse(producto.get());
         }
         return null;
     }
@@ -36,8 +36,7 @@ public class ProductoServiceImpl implements ProductoService {
     @Override
     public List<ProductoResponse> buscarTodos() {
         List<ProductoEntity> listaProductosEntities = productoRepository.findAll();
-        List<ProductoResponse> listaProductoResponse = ProductoBuilder.entityToResponseList(listaProductosEntities);
-        return listaProductoResponse;
+        return ProductoBuilder.entityToResponseList(listaProductosEntities);
     }
 
     @Override
@@ -46,8 +45,7 @@ public class ProductoServiceImpl implements ProductoService {
             if (buscarPorCodigo(producto.getCodigo()) == null) {
                 ProductoEntity productoAGuardar = ProductoBuilder.requestToEntity(producto);
                 ProductoEntity entity = productoRepository.save(productoAGuardar);
-                ProductoResponse productoAResponder = ProductoBuilder.entityToResponse(entity);
-                return productoAResponder;
+                return ProductoBuilder.entityToResponse(entity);
             } else {
                 throw new ApiException("Producto ya existe");
             }

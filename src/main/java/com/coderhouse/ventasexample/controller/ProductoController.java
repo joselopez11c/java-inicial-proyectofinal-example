@@ -28,7 +28,6 @@ public class ProductoController {
     public ResponseEntity<ProductoResponse> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
-
     @PostMapping("/actualizar")
     public ResponseEntity<ProductoResponse> actualizar(@Valid @RequestBody ProductoRequest cliente) throws ApiException {
         return ResponseEntity.ok(service.actualizar(cliente));

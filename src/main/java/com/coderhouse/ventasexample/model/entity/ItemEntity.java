@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 
 @AllArgsConstructor
@@ -14,6 +15,7 @@ import java.math.BigDecimal;
 @Data
 @Entity
 @Table(name = "ITEM")
+@Transactional
 public class ItemEntity {
 
     @Id
@@ -30,15 +32,19 @@ public class ItemEntity {
     @Column(name = "PRECIO")
     private BigDecimal precio;
 
-    //bi-directional many-to-one association to Comprobante
-    @ManyToOne
-    @JoinColumn(name="comprobanteid")
-    private ComprobanteEntity comprobante;
+
+    @Column(name = "COMPROBANTEID")
+    private Integer comprobanteId;
 
     //bi-directional many-to-one association to Producto
     @ManyToOne
-    @JoinColumn(name="productoid")
+    @JoinColumn(name="PRODUCTOID")
     private ProductoEntity producto;
+//
+//    //bi-directional many-to-one association to Comprobante
+//    @ManyToOne
+//    @JoinColumn(name="COMPROBANTEID")
+//    private ComprobanteEntity comprobante;
 
 
 }

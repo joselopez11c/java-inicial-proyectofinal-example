@@ -1,3 +1,5 @@
+drop database ventas;
+
 CREATE DATABASE ventas;
 
 CREATE TABLE ventas.cliente (
@@ -19,7 +21,6 @@ CREATE TABLE ventas.producto (
 CREATE TABLE ventas.comprobante (
     comprobanteid int NOT NULL AUTO_INCREMENT,
     fecha DATETIME,
-    cantidad int,
     total FLOAT(10, 2),
     clienteid int,
     estado int,
